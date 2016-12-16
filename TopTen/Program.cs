@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
+using System.Web;
 
 public class Program
 {
@@ -11,7 +11,7 @@ public class Program
 
     //coment
 
-	public List<String> getHtmlFromUrls(List<Url> webSites)
+	public List<String> getHtmlFromUrls(List<Uri> webSites)
 	{
 		const string noHTML = "NO_HTML";
 		//TODO
@@ -38,7 +38,7 @@ public class Program
 		// Uzeti text pretvoriti ga u listu rijeci
 		// Kreirati metod koji ce Izbrisati rijeci krace od 3 slova
 		// Kreirati metod koji ce izbaciti rijeci koje sadrze broj
-		return new List<String> { new List<String> { "Danas", "je", "lijep", "dan" } };
+		return new List<List<String>> { new List<String> { "Danas", "je", "lijep", "dan" } };
 	}
 
 	public Dictionary<String, int> getWordCounts(List<string> rijeci)
@@ -52,6 +52,6 @@ public class Program
 	{
 		// TODO Dzenita, weighted average
 		//TEsttCase Adin
-		return Dictionary<String, int>();
+		return new Dictionary<String, int>();
 	}
 }

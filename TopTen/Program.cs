@@ -6,7 +6,16 @@ public class Program
 {
 	public static void Main()
 	{
-		Console.WriteLine("Hello World");
+        var in_test1 = new List<String> { "Danas", "je", "lijep", "dan" };
+        var out_test1 = getWordCounts(in_test1);
+        foreach (var k in out_test1.Keys)
+        {
+            Console.WriteLine(k + ":" + out_test1[k]);
+        }
+      
+
+        Console.WriteLine("Hello World");
+        Console.ReadLine();
 	}
 
     //coment
@@ -41,11 +50,24 @@ public class Program
 		return new List<List<String>> { new List<String> { "Danas", "je", "lijep", "dan" } };
 	}
 
-	public Dictionary<String, int> getWordCounts(List<string> rijeci)
+	public static Dictionary<string, int> getWordCounts(List<string> rijeci)
 	{
-		//TODO Denis
-		//TODO TestCases DZenita
-		return new Dictionary<String, int> { { "Danas", 2 }, { "dan", 1 } };
+        Dictionary<string, int> results = new Dictionary<string, int>();
+        foreach (string s in rijeci)
+        {
+            if (results.ContainsKey(s))
+            {
+                results[s] += 1;
+            }
+            else
+            {
+                results[s] = 1;
+            }            
+        }
+        //TODO Denis
+        //TODO TestCases DZenita
+        // return new Dictionary<String, int> { { "Danas", 2 }, { "dan", 1 } };
+        return results;
 	}
 
 	Dictionary<String, int> makeTop10s(List<Dictionary<String, int>> top10Liste)

@@ -6,7 +6,7 @@ public class Program
 {
 	public static void Main()
 	{
-        var in_test1 = new List<String> { "Danas", "je", "lijep", "dan" };
+        var in_test1 = new List<String> { "Danas", "je", "lijep", "dan", "Danas", "Dan" };
         var out_test1 = getWordCounts(in_test1);
         foreach (var k in out_test1.Keys)
         {
@@ -52,6 +52,8 @@ public class Program
 
 	public static Dictionary<string, int> getWordCounts(List<string> rijeci)
 	{
+        /*
+         * v1 code
         Dictionary<string, int> results = new Dictionary<string, int>();
         foreach (string s in rijeci)
         {
@@ -64,6 +66,19 @@ public class Program
                 results[s] = 1;
             }            
         }
+        */
+        
+        // should be case-insensitive now
+        var results = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
+        foreach (string s in rijeci)
+        {
+            int currentCount = 0;
+            //  TryGetValue is more performant than ContainsKey followed by item access
+            results.TryGetValue(s, out currentCount);
+            currentCount++;
+            results[s] = currentCount;
+        }
+
         //TODO Denis
         //TODO TestCases DZenita
         // return new Dictionary<String, int> { { "Danas", 2 }, { "dan", 1 } };

@@ -1,18 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Linq;
 
 public class Program
 {
 	public static void Main()
 	{
+        Program topTenCounter = new Program();
+
+        // getWordCounts demo
         var in_test1 = new List<String> { "Danas", "je", "lijep", "dan", "Danas", "Dan" };
-        var out_test1 = getWordCounts(in_test1);
+        var out_test1 = topTenCounter.getWordCounts(in_test1);       
         foreach (var k in out_test1.Keys)
         {
             Console.WriteLine(k + ":" + out_test1[k]);
         }
-      
+        // test_getWordListFromTexts demo
+        bool result = topTenCounter.test_getWordListFromTexts();
+        Console.WriteLine("test_getWordListFromTexts returned: " + result);
+
 
         Console.WriteLine("Hello World");
         Console.ReadLine();
@@ -50,7 +57,33 @@ public class Program
 		return new List<List<String>> { new List<String> { "Danas", "je", "lijep", "dan" } };
 	}
 
-	public static Dictionary<string, int> getWordCounts(List<string> rijeci)
+    public bool test_getWordListFromTexts()
+    {
+        var testData = new List<String> { "Danas", "je", "lijep", "dan" };
+        var methodData = getWordListFromTexts(new List<string> { "Danas je lijep dan" })[0];
+        
+        return testData.SequenceEqual(methodData);
+
+        /*
+         *  Manual comparing
+        int wordCount = testData.Count;
+        if (wordCount != methodData.Count)
+        {
+            return false;
+        }
+        for (int i = 0; i < wordCount; i++)
+        {
+            if ( testData[i] != methodData[i])
+            {
+                return false;
+            }
+        }
+        return true; ;
+        */
+
+    }
+
+	public Dictionary<string, int> getWordCounts(List<string> rijeci)
 	{
         /*
          * v1 code

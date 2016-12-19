@@ -1,12 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
+<<<<<<< Updated upstream
 using System.Linq;
+=======
+using System.Net;
+
+>>>>>>> Stashed changes
 
 public class Program
 {
 	public static void Main()
 	{
+<<<<<<< Updated upstream
         Program topTenCounter = new Program();
 
         // getWordCounts demo
@@ -23,17 +29,34 @@ public class Program
 
         Console.WriteLine("Hello World");
         Console.ReadLine();
+=======
+		DateTime dt1 = DateTime.Now;
+
+		List<String> htmlList = getHtmlFromUrls(new List<Uri> { new Uri("http://www.klix.com")});
+		Console.WriteLine(htmlList[0]);
+
+		DateTime dt2 = DateTime.Now;
+		TimeSpan ts = dt2 - dt1;
+		Console.WriteLine("Duration " + ts.Milliseconds);
+>>>>>>> Stashed changes
 	}
 
     //coment
 
-	public List<String> getHtmlFromUrls(List<Uri> webSites)
+	static public List<String> getHtmlFromUrls(List<Uri> webSites)
 	{
 		const string noHTML = "NO_HTML";
+		List<String> htmlList = new List<String>();
 		//TODO
 		// Uzeti listu webSites & download HTML
 		// if Web site is not available put "NO_HTML"
-		return new List<String> { "HTML1", "HTML2" };
+		foreach (Uri webURI in webSites)
+		{
+			WebClient wc = new WebClient();
+			string html = wc.DownloadString(webURI);
+			htmlList.Add(html);
+		}
+		return htmlList ;
 	}
 
 	public List<String> removeHTMLs(List<string> htmls)

@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{D345159D-5D7C-45A6-BC8A-49B5924B435A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TopTen/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TopTen Status">
     <Files>
-      <File FileName="TopTen/Program.cs" Line="57" Column="2" />
+      <File FileName="TopTen Status" />
+      <File FileName="../../StudentDemo/StudentDemo/Student.cs" Line="3" Column="2" />
+      <File FileName="TopTen Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

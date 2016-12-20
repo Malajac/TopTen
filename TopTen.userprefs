@@ -1,8 +1,7 @@
-﻿<Properties StartupConfiguration="{D345159D-5D7C-45A6-BC8A-49B5924B435A}|Default">
+﻿<Properties StartupConfiguration="{CDEC27E3-8C61-4D27-887A-9F3531EA6415}|Default">
+  <MonoDevelop.Ide.ItemProperties.TopTenApp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="TopTen Status">
     <Files>
-      <File FileName="TopTen Status" />
-      <File FileName="../../StudentDemo/StudentDemo/Student.cs" Line="3" Column="2" />
       <File FileName="TopTen Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -11,6 +10,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.TopTen PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

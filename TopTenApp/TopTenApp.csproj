@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{D345159D-5D7C-45A6-BC8A-49B5924B435A}</ProjectGuid>
+    <ProjectGuid>{CDEC27E3-8C61-4D27-887A-9F3531EA6415}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TopTen</RootNamespace>
-    <AssemblyName>TopTen</AssemblyName>
+    <RootNamespace>TopTenApp</RootNamespace>
+    <AssemblyName>TopTenApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -35,6 +35,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITopTen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TopTenComponent\TopTenComponent.csproj">
+      <Project>{8AD1E666-99EB-4BE4-9CFE-0C26BDA22194}</Project>
+      <Name>TopTenComponent</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
